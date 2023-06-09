@@ -22,3 +22,15 @@ def select_all():
         city = City(row['city_name'], row['visited'], country, row['id'])
         cities.append(city)
     return cities
+
+def select(id):
+    city = None
+    sql = "SELECT * FROM cities WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        country = country_repository.select(result['country_id'])
+        city = City(result['city_name'], result['visited'], country, result['id'])
+    return city
