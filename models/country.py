@@ -3,3 +3,6 @@ class Country:
         self.country_name = country_name
         self.continent = continent
         self.id = id
+
+    def country_name(self):
+        return self.country_name

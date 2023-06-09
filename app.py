@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-from controllers.city_controller import city_controller
+from controllers.city_controller import cities_blueprint
 
 app = Flask(__name__)
 
