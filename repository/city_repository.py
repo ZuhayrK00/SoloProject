@@ -34,3 +34,7 @@ def select(id):
         country = country_repository.select(result['country_id'])
         city = City(result['city_name'], result['visited'], country, result['id'])
     return city
+
+def delete_all():
+    sql = "DELETE FROM cities"
+    run_sql(sql)
