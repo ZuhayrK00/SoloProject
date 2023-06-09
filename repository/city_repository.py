@@ -11,3 +11,14 @@ def save(city):
     city.id = id
     return city
 
+def select_all():
+    cities = []
+
+    sql = "SELECT * FROM cities"
+    result = run_sql(sql)
+
+    for row in result:
+        country = country_repository.select(row['country_id'])
+        city = City(row['city_name'], row['visited'], country, row['id'])
+        cities.append(city)
+    return cities
