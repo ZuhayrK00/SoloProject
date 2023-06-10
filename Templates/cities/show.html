@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="show-list-container">
+
+<p>City: {{ city.name }}</p> 
+<p>Country: {{ city.country.name }}</p>
+
+ 
+{% if city.visited == True %}
+<p>Visited: &#x2714</p>
+{% else %}
+<p>Visited: &#x2716</p>
+{% endif %}
+</div>
+<br>
+<button><a href="/cities">Back to Cities</a></button>
+{% endblock content %}
