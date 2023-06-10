@@ -28,7 +28,7 @@ def create_city():
     return redirect('/cities')
 
 # Show
-@cities_blueprint.route('/cities/<iid>', methods=['GET'])
+@cities_blueprint.route('/cities/<id>', methods=['GET'])
 def show_city(id):
     city = city_repository.select(id)
     return render_template('cities/show.html', city=city)
