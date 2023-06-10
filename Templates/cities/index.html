@@ -1,34 +1,24 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<br>
-  <h1>Title</h1>
-<br>
-<br>
-<br>
-<br>
+{% extends 'base.html' %} {% block content %}
+<h1>My Cities</h1>
+<br />
 <div class="city-list-container">
   {% for city in all_cities %}
-    <div class="city-container">
-    
-      <a class="cityname" href="/cities/{{city.id}}">{{city.name}}</a>
-        <br>
-        <br>   
-          <button><a href="/cities/{{ city.id }}/edit">Update</a></button>
-        <br>
-        <br>
-          <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
-          <input type="submit" value="Delete" style="color: blue;">
-          </form>
-          <br>
-
-        </div>  
+  <div class="city-container">
+    <a class="cityname" href="/cities/{{city.id}}">{{city.name}}</a>
+    <br />
+    <br />
+    <button><a href="/cities/{{ city.id }}/edit">Update</a></button>
+    <br />
+    <br />
+    <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
+      <input type="submit" value="Delete" style="color: blue" />
+    </form>
+    <br />
+  </div>
   {% endfor %}
 </div>
-<br>
+<br />
 
 <button><a href="/cities/new">Add New City</a></button>
-
-
 
 {% endblock %}
