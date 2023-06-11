@@ -6,10 +6,8 @@
   <div class="city-container">
     <a class="cityname" href="/cities/{{city.id}}">{{city.name}}</a>
     <br />
-    <button><a href="/cities/{{ city.id }}/gallery">Up</a></button>
-    </button>
-    <br />
-    <button><a href="/cities/{{ city.id }}/edit">Update</a></button>
+    <a href="/cities/{{ city.id }}/gallery?city_name={{ city.name }}">View Gallery</a>
+
     <br />
     <br />
     <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">

@@ -70,3 +70,11 @@ def delete_cities(id):
     return redirect("/cities")
 
 
+
+@cities_blueprint.route("/cities/<id>/gallery", methods=["GET"])
+def show_gallery(id):
+    city = city_repository.select(id)
+    return render_template("cities/gallery.html", city=city, city_name=city.name)
+
+
+
