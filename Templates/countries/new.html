@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}   
+<div class="country-form-contianer"></div>
+<form action="/countries" method="post" id="form1">
+ <div>   
+    <label for="country name">Country</label>
+    <input type="text" name="name" placeholder="name">
+</div>
+
+<div>
+    <label for="continent">Continent</label>
+    <input type="text" name="continent" placeholder="continent">
+</div>
+
+<div>
+<label for="language">Language</label>
+<input type="text" name="language" placeholder="language">
+</div>
+
+<button type="submit" form="form1" value="Submit">Submit</button>
+</form>
+<br>
+{% endblock content %}
