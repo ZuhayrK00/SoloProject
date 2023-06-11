@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Update Country</h2>
+
+<form action="/countries/{{country.id}}" method='post'>
+<div>
+    <label for="country">Country</label>
+    <input type="text" name="name" id="country name" value="{{country.name}}" required autofocus>
+</div>
+
+<div>
+    <label for="continent">Continent</label>
+    <input type="text" name="continent" id="continent" value="{{country.continent}}" required>
+</div>
+
+<div>
+    <label for="language">Language</label>
+    <input type="text" name="language" id="language" value="{{country.language}}" required>
+</div>
+
+
+<div>
+    <label for="visited">Visited</label>
+    <select name="visited" id="visited">
+        <option value="true">
+            {% if country.visited == True %}{% endif %}
+            Yes
+        </option>
+        <option value="false">
+            {% if country.visited == False %}{% endif %}
+            No
+        </option>
+    </select>
+</div>
+<button type="submit">Update</button>
+
+</form>
+
+{% endblock content %}
