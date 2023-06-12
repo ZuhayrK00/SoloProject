@@ -1,195 +1,208 @@
 .slider {
-    display: flex;
-    overflow: hidden;
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  flex: 0 0 200px;
+  animation: slide 8s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
   }
-  
-  .slide {
-    flex: 0 0 200px;
-    animation: slide 8s infinite;
+  25% {
+    transform: translateX(-100%);
   }
-  
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-    25% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(-200%);
-    }
-    75% {
-      transform: translateX(-300%);
-    }
-    100% {
-      transform: translateX(-400%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
+  50% {
+    transform: translateX(-200%);
   }
-  
-  body {
-    font-family: "Roboto", sans-serif;
-    padding: 0;
-    margin: 0;
+  75% {
+    transform: translateX(-300%);
   }
-  
-  .small {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.4);
+  100% {
+    transform: translateX(-400%);
   }
-  
-  h1.center {
-    text-align: center;
-    padding: 50px 0;
-    font-weight: 800;
-    margin: 0;
-    letter-spacing: -1px;
-    color: inherit;
-    font-size: 40px;
+  100% {
+    transform: translateX(0%);
   }
-  
-  h2 {
-    text-align: center;
-    font-size: 30px;
-    margin: 0;
-    font-weight: 300;
-    color: inherit;
-    padding: 50px;
-  }
-  
-  .center {
-    text-align: center;
-  }
-  
-  section {
-    height: 100vh;
-  }
-  
-  /* NAVIGATION */
-  nav {
-    width: 80%;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px 0;
-    box-shadow: 0px 3px 0px #dedede;
-  }
-  
-  nav ul {
-    list-style: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline-block;
-  }
-  
-  nav ul li a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #aaa;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0 5px;
-    transition: all 0.5s;
-  }
-  
-  nav ul li a:hover {
-    color: #555;
-  }
-  
-  /* stroke */
-  nav.stroke ul li a:after,
-  nav.fill ul li a:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: ".";
-    color: transparent;
-    background: #aaa;
-    height: 1px;
-  }
-  
-  nav.stroke ul li a:hover:after {
-    width: 100%;
-  }
-  
-  nav.fill ul li a {
-    transition: all 2s;
-  }
-  
-  nav.fill ul li a:after {
-    text-align: left;
-    content: ".";
-    margin: 0;
-    opacity: 0;
-  }
-  
-  nav.fill ul li a:hover {
-    color: #fff;
-  }
-  
-  .country-list-container {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .country-container {
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .countryname {
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .btn {
-    background-color: #f4f4f4;
-    border: none;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #dedede;
-  }
-  
-  .delete-form {
-    display: inline-block;
-  }
-  
-  .delete-btn {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    text-decoration: underline;
-    color: blue;
-    cursor: pointer;
-  }
-  
-  hr {
-    border: none;
-    border-top: 1px solid #dedede;
-    margin: 20px 0;
-  }
-  
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.small {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+h1.center {
+  text-align: center;
+  padding: 50px 0;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+  color: inherit;
+  font-size: 40px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  font-weight: 300;
+  color: inherit;
+  padding: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+section {
+  height: 100vh;
+}
+
+/* NAVIGATION */
+nav {
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0px 3px 0px #dedede;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 5px;
+  transition: all 0.5s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+/* stroke */
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+  transition: width 0.5s;
+}
+
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: ".";
+  margin: 0;
+  opacity: 0;
+}
+
+nav.fill ul li a:hover {
+  color: #fff;
+}
+
+.country-list-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.country-container {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.countryname {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.btn {
+  background-color: #f4f4f4;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #dedede;
+}
+
+.delete-form {
+  display: inline-block;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+hr {
+  border: 1px none;
+  border-top: 1px solid #dedede;
+  margin: 20px 0;
+}
+
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resize {
+  width: 30%; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+}
+
