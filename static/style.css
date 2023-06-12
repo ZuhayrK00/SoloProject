@@ -73,17 +73,20 @@ hr {
   margin: 20px 0;
 }
 
+label {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .divide {
-  border: 2px solid #dedede ;
+  border: 2px solid #dedede;
   border-radius: 5px;
   margin: auto 120px;
 }
 
-.text {
+p {
   text-align: center;
   margin: auto 170px;
-  font-family: 'Courier New', Courier, monospace
-
+  font-family: "Courier New", Courier, monospace;
 }
 /* NAVIGATION */
 nav {
@@ -199,19 +202,16 @@ nav.fill ul li a:hover {
   font-weight: 600;
   transition: background-color 0.3s ease;
   cursor: pointer;
-
 }
 
 .btn a {
   text-decoration: none; /* Add this line */
   color: #555555;
-
 }
 
 .btn a:hover {
   text-decoration: none; /* Add this line */
   color: #555555;
-
 }
 
 .btn:hover {
@@ -233,7 +233,13 @@ nav.fill ul li a:hover {
   cursor: pointer;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-
-
-
+.form-container div {
+  margin-bottom: 10px;
+}

@@ -80,3 +80,9 @@ def mark_country_visited(id):
     country.visited = True  # Set visited as True
     country_repository.update(country)
     return redirect("/bucketlist")
+
+# GALLERY
+@countries_blueprint.route("/countries/<id>/gallery", methods=["GET"])
+def show_gallery(id):
+    country = country_repository.select(id)
+    return render_template("countries/gallery.html", country=country, country_name=country.name)
