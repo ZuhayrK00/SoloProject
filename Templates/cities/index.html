@@ -6,14 +6,17 @@
   <div class="city-container">
     <a class="cityname" href="/cities/{{city.id}}">{{city.name}}</a>
     <br />
-    <a href="/cities/{{ city.id }}/gallery?city_name={{ city.name }}">View Gallery</a>
-    <br />
+    <br>
+    <form action="/cities/{{ city.id }}/gallery?city_name={{ city.name }}">
+      <input type="submit" value="Gallary">
+    </form>
     <br />
     <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
       <input type="submit" value="Delete" style="color: blue" />
     </form>
     <br />
   </div>
+  <hr>
   {% endfor %}
 </div>
 <br />

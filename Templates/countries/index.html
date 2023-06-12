@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block content %}
-<h1>My Countries</h1>
+{% extends 'base.html' %} 
+{% block content %}
+<h1 class="center">My Countries</h1>
 <br />
 <div class="country-list-container">
   {% for country in all_countries %}
@@ -7,22 +8,20 @@
     <a class="countryname" href="/countries/{{country.id}}">{{country.name}}</a>
     <br />
     <br />
-    <button><a href="/countries/{{ country.id }}/edit">Update</a></button>
+    <button class="btn"><a href="/countries/{{ country.id }}/edit">Update</a></button>
     <br />
     <br />
-    <form
-      class="delete-form"
-      action="/countries/{{country.id}}/delete"
-      method="POST"
-    >
-      <input type="submit" value="Delete" style="color: blue" />
+    <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
+      <input type="submit" value="Delete" class="delete-btn" />
     </form>
     <br />
   </div>
-
+  <hr />
   {% endfor %}
 </div>
 
-<button><a href="/countries/new">Add New Country</a></button>
+<button class="btn"><a href="/countries/new">Add New Country</a></button>
 
 {% endblock content %}
+
+
