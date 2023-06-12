@@ -70,11 +70,20 @@ def delete_cities(id):
     return redirect("/cities")
 
 
-
+# GALLERY
 @cities_blueprint.route("/cities/<id>/gallery", methods=["GET"])
 def show_gallery(id):
     city = city_repository.select(id)
     return render_template("cities/gallery.html", city=city, city_name=city.name)
+
+# MARK VISITED
+@cities_blueprint.route("/cities/<id>/mark_visited", methods=["POST"])
+def mark_visited(id):
+    city = city_repository.select(id)
+    city.visited = True  # Set visited as True
+    city_repository.update(city)
+    return redirect("/bucketlist")
+
 
 
 

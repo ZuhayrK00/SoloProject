@@ -72,3 +72,11 @@ def delete_all(id):
 def delete(id):
     country_repository.delete(id)
     return redirect("/countries")
+
+# MARK VISITED
+@countries_blueprint.route("/countries/<id>/mark_visited", methods=["POST"])
+def mark_country_visited(id):
+    country = country_repository.select(id)
+    country.visited = True  # Set visited as True
+    country_repository.update(country)
+    return redirect("/bucketlist")

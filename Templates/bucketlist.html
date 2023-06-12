@@ -11,19 +11,16 @@
   From here, you can edit and delete countries and cities.
 </p>
 <h1 class="center">My Cities</h1>
-<br />
 <div class="country-list-container">
   {% for city in all_cities %}
   <div class="country-container">
     <a class="countryname" href="/cities/{{city.id}}">{{city.name}}</a>
     <br />
     <br />
-    <button class="btn"><a href="/cities/{{ city.id }}/edit">Update</a></button>
+    <form action="/cities/{{ city.id }}/mark_visited" method="POST" style="display: inline;">
+        <input type="submit" value="Mark Visited" class="btn" />
+      </form>
     <br />
-    <br />
-    <form action="/cities/{{ city.id }}/gallery?city_name={{ city.name }}">
-      <input type="submit" value="Gallery" class="btn" />
-    </form>
     <br />
     <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
       <input type="submit" value="Delete" class="delete-btn" />
@@ -33,14 +30,16 @@
   {% endfor %}
 </div>
 <h1 class="center">My Countries</h1>
-<br />
 <div class="country-list-container">
   {% for country in all_countries %}
   <div class="country-container">
     <a class="countryname" href="/countries/{{country.id}}">{{country.name}}</a>
     <br />
     <br />
-    <button class="btn"><a href="/countries/{{ country.id }}/edit">Update</a></button>
+    <!-- HERE -->
+    <form action="/countries/{{ country.id }}/mark_visited" method="POST" style="display: inline;">
+        <input type="submit" value="Mark Visited" class="btn" />
+      </form>
     <br />
     <br />
     <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
@@ -53,7 +52,6 @@
 </div>
 <br><br><br><br><br>
 {% endblock content %}
-
 </div>
 </body>
 </html>
