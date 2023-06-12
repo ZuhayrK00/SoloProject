@@ -67,6 +67,11 @@ section {
   height: 100vh;
 }
 
+hr {
+  border: 1px none;
+  border-top: 1px solid #dedede;
+  margin: 20px 0;
+}
 /* NAVIGATION */
 nav {
   width: 80%;
@@ -138,6 +143,17 @@ nav.fill ul li a:hover {
   color: #fff;
 }
 
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resize {
+  width: 30%; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+}
+
 .country-list-container {
   width: 80%;
   margin: 0 auto;
@@ -170,39 +186,27 @@ nav.fill ul li a:hover {
   font-weight: 600;
   transition: background-color 0.3s ease;
   cursor: pointer;
+
 }
 
 .btn:hover {
   background-color: #dedede;
+  text-decoration: none;
 }
 
 .delete-form {
   display: inline-block;
+  text-decoration: none;
 }
 
 .delete-btn {
   background-color: transparent;
   border: none;
   padding: 0;
-  text-decoration: underline;
-  color: blue;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 
-hr {
-  border: 1px none;
-  border-top: 1px solid #dedede;
-  margin: 20px 0;
-}
 
-.centered {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.resize {
-  width: 30%; /* Adjust the width as needed */
-  height: auto; /* Maintain the aspect ratio */
-}
 
