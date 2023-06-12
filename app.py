@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask import Flask, render_template_string
 
 from controllers.cities_controller import cities_blueprint
 from controllers.countries_controller import countries_blueprint

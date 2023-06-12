@@ -205,10 +205,16 @@ nav.fill ul li a:hover {
   font-weight: 600;
   transition: background-color 0.3s ease;
   cursor: pointer;
+  outline: none; /* Remove the blue outline */
+  text-decoration: none; /* Remove the underline */
 }
 
 .btn:hover {
   background-color: #dedede;
+  text-decoration: none;
+}
+
+.btn a {
   text-decoration: none;
 }
 

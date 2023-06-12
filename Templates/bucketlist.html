@@ -2,7 +2,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="center">Your Travel Bucket List</h1>
+<!-- <!-- <h1 class="center">Your Travel Bucket List</h1> -->
+<br><br>
 <p>
   This is where you can view all the places you've not visited and wish to visit
   in the future.
@@ -10,6 +11,7 @@
   <br />
   From here, you can mark each of your locations as visited or delete locations.
 </p>
+<br>
 <h1 class="center">My Cities</h1>
 <div class="country-list-container">
   {% for city in all_cities %}
@@ -28,20 +30,18 @@
   </div>
   <hr />
   {% endfor %}
+  
 </div>
 <h1 class="center">My Countries</h1>
 <div class="country-list-container">
   {% for country in all_countries %}
   <div class="country-container">
     <a class="countryname" href="/countries/{{country.id}}">{{country.name}}</a>
-    <br />
-    <br />
-    <!-- HERE -->
+    <br /><br />
     <form action="/countries/{{ country.id }}/mark_visited" method="POST" style="display: inline;">
         <input type="submit" value="Mark Visited" class="btn" />
       </form>
-    <br />
-    <br />
+    <br /><br />
     <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
       <input type="submit" value="Delete" class="delete-btn" />
     </form>
@@ -50,6 +50,7 @@
   <hr />
   {% endfor %}
 </div>
+
 <br><br><br><br><br>
 {% endblock content %}
 </div>

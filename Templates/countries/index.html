@@ -8,8 +8,9 @@
     <a class="countryname" href="/countries/{{country.id}}">{{country.name}}</a>
     <br />
     <br />
-    <button class="btn"><a href="/countries/{{ country.id }}/edit">Update</a></button>
-    <br />
+    <form action="/countries/{{ country.id }}/edit">
+      <input type="submit" value="Update" class="btn">
+    </form>
     <br />
     <form action="/countries/{{ country.id }}/gallery?country_name={{ country.name }}">
       <input type="submit" value="Gallery" class="btn">

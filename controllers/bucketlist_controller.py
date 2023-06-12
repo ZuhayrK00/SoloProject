@@ -18,3 +18,5 @@ def bucketlist():
             bucketlist_countries.append(country)
 
     return render_template("/bucketlist.html", all_cities=bucketlist_cities, all_countries = bucketlist_countries)
+
+
