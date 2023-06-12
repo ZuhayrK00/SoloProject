@@ -1,11 +1,13 @@
 .slider {
   display: flex;
   overflow: hidden;
+  height: 200px;
 }
 
 .slide {
   flex: 0 0 200px;
   animation: slide 8s infinite;
+  margin-right: 10px;
 }
 
 @keyframes slide {
@@ -13,16 +15,16 @@
     transform: translateX(0%);
   }
   25% {
-    transform: translateX(-100%);
+    transform: translateX(-200px);
   }
   50% {
-    transform: translateX(-200%);
+    transform: translateX(-400px);
   }
   75% {
-    transform: translateX(-300%);
+    transform: translateX(-600px);
   }
   100% {
-    transform: translateX(-400%);
+    transform: translateX(-800px);
   }
   100% {
     transform: translateX(0%);
@@ -88,6 +90,7 @@ p {
   margin: auto 170px;
   font-family: "Courier New", Courier, monospace;
 }
+
 /* NAVIGATION */
 nav {
   width: 80%;
@@ -202,16 +205,6 @@ nav.fill ul li a:hover {
   font-weight: 600;
   transition: background-color 0.3s ease;
   cursor: pointer;
-}
-
-.btn a {
-  text-decoration: none; /* Add this line */
-  color: #555555;
-}
-
-.btn a:hover {
-  text-decoration: none; /* Add this line */
-  color: #555555;
 }
 
 .btn:hover {
