@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends "base.html" %} {% block content %}
+
+<h1 class="center">Your Travel Bucket List</h1>
+<p class="text">
+  This is where you can view all the places you've not visited and wish to visit
+  in the future.
+  <br />
+  <br />
+  From here, you can edit and delete countries and cities.
+</p>
+<br />
+<br />
+
+<h1 class="center">My Cities</h1>
+<br />
+<div class="country-list-container">
+  {% for city in all_cities %}
+  <div class="country-container">
+    <a class="countryname" href="/cities/{{city.id}}">{{city.name}}</a>
+    <br />
+    <br />
+    <button class="btn"><a href="/cities/{{ city.id }}/edit">Update</a></button>
+    <br />
+    <br />
+    <form action="/cities/{{ city.id }}/gallery?city_name={{ city.name }}">
+      <input type="submit" value="Gallery" class="btn" />
+    </form>
+    <br />
+    <for class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
+      <input type="submit" value="Delete" class="delete-btn" />
+    </for>
+  </div>
+  <hr />
+  {% endfor %}
+
+  <h1 class="center">My Countries</h1>
+  <br />
+  <div class="country-list-container">
+    {% for country in all_countries %}
+    <div class="country-container">
+      <a class="countryname" href="/countries/{{country.id}}"
+        >{{country.name}}</a
+      >
+      <br />
+      <br />
+      <button class="btn">
+        <a href="/countries/{{ country.id }}/edit">Update</a>
+      </button>
+      <br />
+      <br />
+      <form
+        class="delete-form"
+        action="/countries/{{country.id}}/delete"
+        method="POST"
+      >
+        <input type="submit" value="Delete" class="delete-btn" />
+      </form>
+      <br />
+    </div>
+    <hr />
+    {% endfor %}
+  </div>
+
+  <!-- ___________ALL COUNTRIES LIST______________ -->
+
+  {% endblock content %}
+</div>

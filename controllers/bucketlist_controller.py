@@ -17,5 +17,4 @@ def bucketlist():
         if country.visited is False:
             bucketlist_countries.append(country)
 
-    # import pdb; pdb.set_trace()
     return render_template("/bucketlist.html", all_cities=bucketlist_cities, all_countries = bucketlist_countries)
