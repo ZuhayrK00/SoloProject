@@ -15,16 +15,18 @@
       <input type="submit" value="Gallery" class="btn" />
     </form>
     <br />
-    <for class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
+    <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
       <input type="submit" value="Delete" class="delete-btn" />
-    </for>
+    </form>
   </div>
   <hr />
   {% endfor %}
 </div>
 <br />
 <div class="center">
-  <button class="btn"><a href="/cities/new">Add New City</a></button>
+  <form action="/cities/new">
+    <input type="submit" value="Add New City" class="btn">
+  </form>
 </div>
 
 {% endblock content %}

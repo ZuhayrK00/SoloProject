@@ -1,34 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<form action="/cities" method="post">
-<div>
-    <label for="name">City:</label>
-    <input type="text" name="name" placeholder="name" required autofocus>
+<div class="center">
+    <h2 class="center">New City</h2>
+    <div class="form-container">
+        <form action="/cities" method="post">
+            <div>
+                <label for="name">City</label>
+                <br>
+                <input 
+                type="text" 
+                name="name" 
+                required autofocus
+                />
+            </div>
+            <hr>
+            <div>
+                <label for="visited">Visited</label>
+                <br>
+                <select id="visited" name="visited">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <hr>
+            <div>
+                <label for="country">Country</label>
+                <br>
+                <select name="country_id" id="country">
+                    {% for country in all_countries %}
+                    <option value="{{ country.id }}">{{ country.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <hr>
+            <input type="submit" value="Submit" class="btn" />
+        </form>
+    </div>
 </div>
-
-<div>
-    <label for="visited">Visited:</label>
-    <select id="visited" name="visited">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select>
-</div>
-
-<div>
-    <label for="country">Country:</label>
-    <select name="country_id" id="country">
-        {% for country in all_countries %}
-            <option value="{{ country.id }}">{{ country.name}}</option>
-        {% endfor %}
-        hello
-      </select>
-   <button type="submit">Submit</button>
-
-</form>
-</div>
-
-
-
-
 {% endblock content %}
