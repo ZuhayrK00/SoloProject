@@ -16,8 +16,11 @@ app.register_blueprint(completed_blueprint)
 
 @app.route("/")
 def main():
-    return render_template("index.html")
+    return render_template("home.html")
 
+@app.route("/index")
+def base():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run
