@@ -24,3 +24,5 @@ def completed():
         all_cities=completed_cities,
         all_countries=completed_countries,
     )
+
+

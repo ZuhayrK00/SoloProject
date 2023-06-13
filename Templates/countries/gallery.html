@@ -5,9 +5,9 @@
     {% for i in '12345' %}
       <input type="radio" name="slide_switch" id="id{{ i }}"{% if i == '2' %} checked="checked"{% endif %}/>
       <label for="id{{ i }}">
-        <img src="https://source.unsplash.com/100x100/?{{ country.name }}&random{{ i }}" width="100"/>
+        <img src="https://source.unsplash.com/1200x1200/?{{ country.name }}&random{{ i }}" width="100"/>
       </label>
-      <img src="https://source.unsplash.com/200x200/?{{ country.name }}&random{{ i }}"/>
+      <img src="https://source.unsplash.com/1200x1200/?{{ country.name }}&random{{ i }}"/>
     {% endfor %}
   </div>
 {% endblock content %}

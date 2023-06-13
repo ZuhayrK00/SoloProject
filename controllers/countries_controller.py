@@ -90,3 +90,11 @@ def show_gallery(id):
     return render_template(
         "countries/gallery.html", country=country, country_name=country.name
     )
+
+# NOT VISITED
+@countries_blueprint.route("/countries/<id>/not_visited", methods=["POST"])
+def not_visited(id):
+    country = country_repository.select(id)
+    country.visited = False  # Set visited as True
+    country_repository.update(country)
+    return redirect("/completed")
