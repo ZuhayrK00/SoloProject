@@ -1,8 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-
 <div class="center">
   <h2 class="center">Update City</h2>
-
   <div class="form-container">
     <form action="/cities/{{city.id}}" method="post">
       <div>
@@ -49,5 +47,4 @@
     </form>
   </div>
 </div>
-
 {% endblock content %}

@@ -76,6 +76,7 @@ def show_gallery(id):
     city = city_repository.select(id)
     return render_template("cities/gallery.html", city=city, city_name=city.name)
 
+
 # MARK VISITED
 @cities_blueprint.route("/cities/<id>/mark_visited", methods=["POST"])
 def mark_visited(id):
@@ -84,12 +85,11 @@ def mark_visited(id):
     city_repository.update(city)
     return redirect("/bucketlist")
 
+
+# NOT VISITED
 @cities_blueprint.route("/cities/<id>/not_visited", methods=["POST"])
 def not_visited(id):
     city = city_repository.select(id)
     city.visited = False  # Set visited as True
     city_repository.update(city)
     return redirect("/completed")
-
-
-

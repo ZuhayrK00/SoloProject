@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block content %}
-<br><br>
+<br>
+<br>
 <p>
   This is where you can view all the places you've not visited and wish to visit
   in the future.
@@ -28,14 +29,14 @@
   </div>
   <hr />
   {% endfor %}
-  
 </div>
 <h1 class="center">My Countries</h1>
 <div class="country-list-container">
   {% for country in all_countries %}
   <div class="country-container">
     <a class="countryname" href="/countries/{{country.id}}">{{country.name}}</a>
-    <br /><br />
+    <br />
+    <br />
     <form action="/countries/{{ country.id }}/mark_visited" method="POST" style="display: inline;">
         <input type="submit" value="Mark Visited" class="btn" />
       </form>
@@ -48,7 +49,6 @@
   <hr />
   {% endfor %}
 </div>
-
 <br><br><br><br><br>
 {% endblock content %}
 </div>

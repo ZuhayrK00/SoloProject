@@ -1,16 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-
 <h2>{{city.name}}</h2>
 <div class="slider">
-  {% for i in range(15) %}
-    {% if i < 15 %}
-      <div class="slide">
-        <img
-          src="https://source.unsplash.com/200x200/?{{city.name}}&random={{i+1}}"
-          alt="photo of city"
-        />
-      </div>
-    {% endif %}
-  {% endfor %}
+  {% for i in range(15) %} {% if i < 15 %}
+  <div class="slide">
+    <img
+      src="https://source.unsplash.com/200x200/?{{city.name}}&random={{i+1}}"
+      alt="photo of city"
+    />
+  </div>
+  {% endif %} {% endfor %}
 </div>
-{% endblock content %} 
+{% endblock content %}

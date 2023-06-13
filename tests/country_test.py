@@ -1,8 +1,8 @@
 import unittest
 from models.country import Country
 
-class TestCountry(unittest.TestCase):
 
+class TestCountry(unittest.TestCase):
     def setUp(self):
         self.country1 = Country("Scotland", "Europe", "English")
         self.country2 = Country("Spain", "Europe", "Spanish")

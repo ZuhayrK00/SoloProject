@@ -1,5 +1,4 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1 class="center">My Countries</h1>
 <br />
 <div class="country-list-container">
@@ -9,14 +8,20 @@
     <br />
     <br />
     <form action="/countries/{{ country.id }}/edit">
-      <input type="submit" value="Update" class="btn">
+      <input type="submit" value="Update" class="btn" />
     </form>
     <br />
-    <form action="/countries/{{ country.id }}/gallery?country_name={{ country.name }}">
-      <input type="submit" value="Gallery" class="btn">
+    <form
+      action="/countries/{{ country.id }}/gallery?country_name={{ country.name }}"
+    >
+      <input type="submit" value="Gallery" class="btn" />
     </form>
-    <br>
-    <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
+    <br />
+    <form
+      class="delete-form"
+      action="/countries/{{country.id}}/delete"
+      method="POST"
+    >
       <input type="submit" value="Delete" class="delete-btn" />
     </form>
     <br />
@@ -24,15 +29,10 @@
   <hr />
   {% endfor %}
 </div>
-<br>
+<br />
 <div class="center">
   <form action="/countries/new">
-    <input type="submit" value="Add New Country" class="btn">
+    <input type="submit" value="Add New Country" class="btn" />
   </form>
 </div>
-  
 {% endblock content %}
-
-
-
-

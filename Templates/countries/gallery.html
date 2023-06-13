@@ -1,69 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-
 <h2>{{country.name}}</h2>
 <div class="slider">
+  {% for i in range(15) %} {% if i < 15 %}
   <div class="slide">
     <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=1"
+      src="https://source.unsplash.com/200x200/?{{country.name}}&random={{i+1}}"
       alt="photo of country"
     />
   </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=5"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=10"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=15"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=20"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=25"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=30"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=35"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=40"
-      alt="photo of country"
-    />
-  </div>
-  <div class="slide">
-    <img
-      src="https://source.unsplash.com/200x200/?{{country.name}}&random=45"
-      alt="photo of country"
-    />
-  </div>
+  {% endif %} {% endfor %}
 </div>
-<br>
-
-
-{% endblock content %} 
+{% endblock content %}

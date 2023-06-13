@@ -1,20 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
-<br>
+{% extends 'base.html' %} {% block content %}
+<br />
 <div class="show-list-container">
-    <p>Country: {{ country.name }}</p>
-    <p>Continent: {{ country.continent }}</p>
-    <p>Language: {{ country.language }}</p>
-
-    {% if country.visited %}
-        <p>Visited: &#x2714;</p>
-    {% else %}
-        <p>Visited: &#x2716;</p>
-    {% endif %}
+  <p>Country: {{ country.name }}</p>
+  <p>Continent: {{ country.continent }}</p>
+  <p>Language: {{ country.language }}</p>
+  {% if country.visited %}
+  <p>Visited: &#x2714;</p>
+  {% else %}
+  <p>Visited: &#x2716;</p>
+  {% endif %}
 </div>
-<br>
-
+<br />
 <div class="center">
-    <button class="btn"><a href="/countries">Back to Countries</a></button>
+  <button class="btn"><a href="/countries">Back to Countries</a></button>
 </div>
 {% endblock content %}

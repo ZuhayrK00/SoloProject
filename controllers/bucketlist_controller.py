@@ -6,10 +6,12 @@ import repositories.country_repository as country_repository
 bucketlist_blueprint = Blueprint("bucketlist", __name__)
 
 
+# FIND UNCOMPLETED CITY/COUNTRY
 @bucketlist_blueprint.route("/bucketlist")
 def bucketlist():
-
-    bucketlist_cities = [city for city in city_repository.select_all() if city.visited is False]
+    bucketlist_cities = [
+        city for city in city_repository.select_all() if city.visited is False
+    ]
 
     countries = country_repository.select_all()
     bucketlist_countries = []
@@ -17,6 +19,8 @@ def bucketlist():
         if country.visited is False:
             bucketlist_countries.append(country)
 
-    return render_template("/bucketlist.html", all_cities=bucketlist_cities, all_countries = bucketlist_countries)
-
-
+    return render_template(
+        "/bucketlist.html",
+        all_cities=bucketlist_cities,
+        all_countries=bucketlist_countries,
+    )

@@ -2,8 +2,8 @@ import unittest
 from models.city import City
 from models.country import Country
 
-class TestCity(unittest.TestCase):
 
+class TestCity(unittest.TestCase):
     def setUp(self):
         self.city1 = City("Edinburgh", "Scotland")
         self.city2 = City("Barcalona", "Spain")

@@ -73,6 +73,7 @@ def delete(id):
     country_repository.delete(id)
     return redirect("/countries")
 
+
 # MARK VISITED
 @countries_blueprint.route("/countries/<id>/mark_visited", methods=["POST"])
 def mark_country_visited(id):
@@ -81,8 +82,11 @@ def mark_country_visited(id):
     country_repository.update(country)
     return redirect("/bucketlist")
 
+
 # GALLERY
 @countries_blueprint.route("/countries/<id>/gallery", methods=["GET"])
 def show_gallery(id):
     country = country_repository.select(id)
-    return render_template("countries/gallery.html", country=country, country_name=country.name)
+    return render_template(
+        "countries/gallery.html", country=country, country_name=country.name
+    )

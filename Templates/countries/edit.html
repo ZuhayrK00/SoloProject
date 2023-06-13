@@ -1,65 +1,60 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="center">
-
-    <h2 class="center">Update Country</h2>
-    
-    <div class="form-container">
-        <form action="/countries/{{country.id}}" method="post">
-            <div>
-                <label for="country">Country</label>
-                <br>
-                <input
-                type="text"
-                name="name"
-                id="country name"
-                value="{{country.name}}"
-                required
-                autofocus
-                />
-            </div>
-            <hr />
-            <div>
-                <label for="continent">Continent</label>
-                <br>
-                <input
-                type="text"
-                name="continent"
-                id="continent"
-                value="{{country.continent}}"
-                required
-                />
-            </div>
-            <hr />
-            <div>
-                <label for="language">Language</label>
-                <br>
-                <input
-                type="text"
-                name="language"
-                id="language"
-                value="{{country.language}}"
-                required
-                />
-            </div>
-            <hr />
-            <div>
-                <label for="visited">Visited</label>
-                <br>
-                <select name="visited" id="visited">
-                    <option value="true">
-                        {% if country.visited == True %}{% endif %} Yes
-                    </option>
-                    <option value="false">
-                        {% if country.visited == False %}{% endif %} No
-                    </option>
-                </select>
-            </div>
-            <hr>
-            <button class="btn" type="submit">Update</button>
-        </form>
-    </div>
+  <h2 class="center">Update Country</h2>
+  <div class="form-container">
+    <form action="/countries/{{country.id}}" method="post">
+      <div>
+        <label for="country">Country</label>
+        <br />
+        <input
+          type="text"
+          name="name"
+          id="country name"
+          value="{{country.name}}"
+          required
+          autofocus
+        />
+      </div>
+      <hr />
+      <div>
+        <label for="continent">Continent</label>
+        <br />
+        <input
+          type="text"
+          name="continent"
+          id="continent"
+          value="{{country.continent}}"
+          required
+        />
+      </div>
+      <hr />
+      <div>
+        <label for="language">Language</label>
+        <br />
+        <input
+          type="text"
+          name="language"
+          id="language"
+          value="{{country.language}}"
+          required
+        />
+      </div>
+      <hr />
+      <div>
+        <label for="visited">Visited</label>
+        <br />
+        <select name="visited" id="visited">
+          <option value="true">
+            {% if country.visited == True %}{% endif %} Yes
+          </option>
+          <option value="false">
+            {% if country.visited == False %}{% endif %} No
+          </option>
+        </select>
+      </div>
+      <hr />
+      <button class="btn" type="submit">Update</button>
+    </form>
+  </div>
 </div>
-    
-    {% endblock content %}
-    
+{% endblock content %}
