@@ -3,11 +3,11 @@ from flask import Blueprint
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 
-bucketlist_blueprint = Blueprint("bucketlist", __name__)
+completed_blueprint = Blueprint("completed", __name__)
 
 
-@bucketlist_blueprint.route("/bucketlist")
-def bucketlist():
+@completed_blueprint.route("/completed")
+def completed():
 
     completed_cities = [city for city in city_repository.select_all() if city.visited is True]
 

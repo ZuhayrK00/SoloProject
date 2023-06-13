@@ -84,6 +84,12 @@ def mark_visited(id):
     city_repository.update(city)
     return redirect("/bucketlist")
 
+@cities_blueprint.route("/cities/<id>/not_visited", methods=["POST"])
+def not_visited(id):
+    city = city_repository.select(id)
+    city.visited = False  # Set visited as True
+    city_repository.update(city)
+    return redirect("/completed")
 
 
 
