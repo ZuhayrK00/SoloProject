@@ -82,6 +82,13 @@ def mark_country_visited(id):
     country_repository.update(country)
     return redirect("/bucketlist")
 
+# NOT VISITED
+@countries_blueprint.route("/countries/<id>/not_visited", methods=["POST"])
+def not_visited(id):
+    country = country_repository.select(id)
+    country.visited = False  # Set visited as True
+    country_repository.update(country)
+    return redirect("/completed")
 
 # GALLERY
 @countries_blueprint.route("/countries/<id>/gallery", methods=["GET"])
@@ -91,10 +98,3 @@ def show_gallery(id):
         "countries/gallery.html", country=country, country_name=country.name
     )
 
-# NOT VISITED
-@countries_blueprint.route("/countries/<id>/not_visited", methods=["POST"])
-def not_visited(id):
-    country = country_repository.select(id)
-    country.visited = False  # Set visited as True
-    country_repository.update(country)
-    return redirect("/completed")
