@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
+
 {% block content %}
-  <h2>{{ country.name }}</h2>
-  <div class="slider">
-    {% for i in '12345' %}
-      <input type="radio" name="slide_switch" id="id{{ i }}"{% if i == '2' %} checked="checked"{% endif %}/>
-      <label for="id{{ i }}">
-        <img src="https://source.unsplash.com/1200x1200/?{{ country.name }}&random{{ i }}" width="100"/>
-      </label>
-      <img src="https://source.unsplash.com/1200x1200/?{{ country.name }}&random{{ i }}"/>
-    {% endfor %}
-  </div>
+<h2>{{ country.name }}</h2>
+<div class="slider">
+  {% for i in range(1, 6) %}
+    <input type="radio" name="slide_switch" id="id{{ i }}" {% if i == 2 %}checked="checked"{% endif %} />
+    <label for="id{{ i }}">
+      <img src="https://source.unsplash.com/200x200/?{{ country.name }}&random{{ i }}" alt="photo of country" width="100" />
+    </label>
+    <img src="https://source.unsplash.com/200x200/?{{ country.name }}&random{{ i }}" />
+  {% endfor %}
+</div>
+<br>
 {% endblock content %}
+
